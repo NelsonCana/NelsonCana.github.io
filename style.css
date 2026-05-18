@@ -612,3 +612,29 @@ footer { padding: 40px 60px; background: var(--bg); border-top: 1px solid rgba(1
 .cert-link:hover {
   color: white;
 }
+
+.cert-icon-box {
+  width: 48px;
+  height: 48px;
+  background: rgba(192,38,211,0.1);
+  border: 1px solid rgba(192,38,211,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.titulo-icon-box {
+  width: 64px;
+  height: 64px;
+  background: rgba(192,38,211,0.1);
+  border: 1px solid rgba(192,38,211,0.3);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}

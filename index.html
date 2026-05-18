@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nelson Caña | Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Three.js para partículas 3D -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- CURSOR PERSONALIZADO -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- CANVAS 3D FONDO -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <span class="logo">nelson<span class="accent">.</span>cl</span>
+    <ul>
+      <li><a href="#inicio">inicio</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#proyectos">proyectos</a></li>
+      <li><a href="#contacto">contacto</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>disponible</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio">
+    <div class="hero-content">
+      <p class="saludo">// Hola, universo. Soy</p>
+      <h1>Nelson<br><span class="highlight">Caña</span></h1>
+      <p class="descripcion">Developer · Automatización IA · Full Stack</p>
+      <div class="terminal-text">
+        <span class="prompt">~$</span>
+        <span id="typed"></span>
+        <span class="cursor-blink">▋</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#proyectos" class="btn-primary">Ver proyectos</a>
+        <a href="#contacto" class="btn-secondary">Contacto</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="foto-container">
+        <div class="foto-ring"></div>
+        <div class="foto-ring ring2"></div>
+        <img src="foto.jpg" alt="Nelson Caña" class="foto-perfil" onerror="this.style.display='none'; document.querySelector('.foto-placeholder').style.display='flex'">
+        <div class="foto-placeholder">NC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMINAL -->
+  <section id="terminal-section">
+    <div class="terminal-window">
+      <div class="terminal-bar">
+        <span class="t-btn red"></span>
+        <span class="t-btn yellow"></span>
+        <span class="t-btn green"></span>
+        <span class="t-title">nelson@cosmos ~ </span>
+      </div>
+      <div class="terminal-body" id="terminal-output">
+        <p><span class="t-green">nelson@cosmos</span><span class="t-white">:</span><span class="t-blue">~</span><span class="t-white">$</span> whoami</p>
+        <p class="t-response">Nelson Caña — Full Stack Developer & AI Automation Engineer</p>
+        <p><span class="t-green">nelson@cosmos</span><span class="t-white">:</span><span class="t-blue">~</span><span class="t-white">$</span> <span id="terminal-typed"></span><span class="cursor-blink">▋</span></p>
+      </div>
+      <div class="terminal-input-row">
+        <span class="t-green">nelson@cosmos</span><span class="t-white">:</span><span class="t-blue">~</span><span class="t-white">$</span>
+        <input type="text" id="terminal-input" placeholder="escribe 'help' para ver comandos..." autocomplete="off">
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header">
+      <p class="section-tag">// lo que manejo</p>
+      <h2>Skills & <span class="highlight">Tecnologías</span></h2>
+    </div>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Lenguajes</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>Python</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><span>JavaScript</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"><span>TypeScript</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><span>HTML5</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><span>CSS3</span></div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Frameworks</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"><span>React</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"><span>Next.js</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"><span>Node.js</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"><span>Django</span></div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Bases de Datos</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"><span>PostgreSQL</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"><span>MongoDB</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><span>MySQL</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"><span>Redis</span></div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>IA & Automatización</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"><span>TensorFlow</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><span>Docker</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"><span>Linux</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>LangChain</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <div class="section-header">
+      <p class="section-tag">// lo que he construido</p>
+      <h2>Mis <span class="highlight">Proyectos</span></h2>
+    </div>
+    <div class="proyectos-grid">
+
+      <!-- PYMESEC -->
+      <div class="proyecto-card featured">
+        <div class="proyecto-preview">
+          <img src="pymesec.png" alt="PymeSec preview">
+          <div class="preview-overlay">
+            <span>🔒 Ciberseguridad · IA</span>
+          </div>
+        </div>
+        <div class="proyecto-badge">Destacado</div>
+        <div class="proyecto-top">
+          <div class="proyecto-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div class="proyecto-links">
+            <a href="https://github.com/NelsonCana/Proyecto-PYME-s-Final" target="_blank" title="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="proyecto-titulo">PymeSec</h3>
+        <p class="proyecto-desc">Sistema web de ciberseguridad para PYMEs. Analiza links y correos en busca de vulnerabilidades usando múltiples IAs. Incluye índice de riesgo, reportes ejecutivos y análisis en tiempo real con WebSockets.</p>
+        <div class="proyecto-tags">
+          <span>Python</span>
+          <span>Docker</span>
+          <span>IA</span>
+          <span>WebSockets</span>
+          <span>Gemini</span>
+        </div>
+      </div>
+
+      <!-- AGRISCAN -->
+      <div class="proyecto-card">
+        <div class="proyecto-preview agriscan-preview">
+          <div class="preview-placeholder">
+            <span>🌿</span>
+            <p>AgrIScan</p>
+          </div>
+        </div>
+        <div class="proyecto-top">
+          <div class="proyecto-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="proyecto-links">
+            <a href="https://github.com/NelsonCana" target="_blank" title="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="proyecto-titulo">AgrIScan</h3>
+        <p class="proyecto-desc">IA de análisis de imágenes de plantas. Detecta enfermedades, evalúa el estado de cultivos y genera alertas con diagnóstico detallado. Visión artificial aplicada a la agricultura.</p>
+        <div class="proyecto-tags">
+          <span>Python</span>
+          <span>Computer Vision</span>
+          <span>IA</span>
+          <span>Docker</span>
+        </div>
+      </div>
+
+      <!-- FASHION -->
+      <div class="proyecto-card">
+        <div class="proyecto-preview">
+          <img src="fashion.png" alt="Fashion preview">
+          <div class="preview-overlay">
+            <span>👗 E-commerce · Chatbot</span>
+          </div>
+        </div>
+        <div class="proyecto-top">
+          <div class="proyecto-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          </div>
+          <div class="proyecto-links">
+            <a href="https://github.com/Tote240/ECOFASHION_BACKEND" target="_blank" title="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="proyecto-titulo">EcoFashion</h3>
+        <p class="proyecto-desc">Tienda de ropa online con catálogo completo, carrito de compras y chatbot integrado para atención al cliente. Colecciones destacadas y sistema de stock en tiempo real.</p>
+        <div class="proyecto-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Chatbot</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="section-header">
+      <p class="section-tag">// hablemos</p>
+      <h2>¿Tienes un <span class="highlight">proyecto</span> en mente?</h2>
+      <p class="contacto-sub">Disponible para proyectos freelance, colaboraciones y oportunidades laborales.</p>
+    </div>
+    <div class="contacto-container">
+      <div class="contacto-info">
+        <div class="contacto-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span>nelson@tucorreo.com</span>
+        </div>
+        <div class="contacto-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+          <span>Santiago, Chile 🇨🇱</span>
+        </div>
+        <div class="contacto-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="disponible">Disponible para proyectos</span>
+        </div>
+        <div class="redes-sociales">
+          <a href="https://github.com/NelsonCana" target="_blank" class="red-social">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/nelson-caña" target="_blank" class="red-social">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <form class="contacto-form" onsubmit="enviarFormulario(event)">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea placeholder="Cuéntame tu proyecto..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Enviar mensaje →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <span class="logo">nelson<span class="accent">.</span>cl</span>
+      <p>Construido con 💜 por Nelson Caña — Chile 🇨🇱</p>
+      <p class="footer-copy">© 2025 · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

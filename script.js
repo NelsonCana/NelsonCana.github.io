@@ -227,3 +227,27 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('active');
   });
 });
+
+// RESALTAR SECCIÓN ACTIVA EN EL MENÚ
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('#nav-links a');
+
+function marcarSeccionActiva() {
+  let actual = '';
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 150;
+    if (window.scrollY >= top) {
+      actual = sec.getAttribute('id');
+    }
+  });
+
+  navItems.forEach(link => {
+    link.classList.remove('active-link');
+    if (link.getAttribute('data-section') === actual) {
+      link.classList.add('active-link');
+    }
+  });
+}
+
+window.addEventListener('scroll', marcarSeccionActiva);
+marcarSeccionActiva();

@@ -665,3 +665,231 @@ footer { padding: 40px 60px; background: var(--bg); border-top: 1px solid rgba(1
   flex-shrink: 0;
   color: var(--accent);
 }
+
+/* ============================================ */
+/* RESPONSIVE - MÓVIL Y TABLET                   */
+/* ============================================ */
+
+/* Desactivar cursor personalizado en touch */
+@media (hover: none) and (pointer: coarse) {
+  body { cursor: auto; }
+  #cursor, #cursor-follower { display: none; }
+  .skill-item, .proyecto-card, .btn-primary, a { cursor: pointer; }
+}
+
+/* TABLET */
+@media (max-width: 968px) {
+  #navbar {
+    padding: 16px 24px;
+  }
+  #navbar ul {
+    display: none;
+  }
+  .nav-status {
+    font-size: 0.7rem;
+  }
+
+  #inicio {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 100px 24px 60px;
+    gap: 40px;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .foto-container {
+    width: 200px;
+    height: 200px;
+  }
+  .foto-perfil, .foto-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  #terminal-section { padding: 40px 24px; }
+
+  #skills, #proyectos, #contacto, #sobre-mi, #certificaciones {
+    padding: 60px 24px;
+  }
+
+  .sobre-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contacto-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .certs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titulo-principal {
+    flex-wrap: wrap;
+  }
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+  #navbar {
+    padding: 14px 16px;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+  .nav-status span:last-child {
+    display: none;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+  .descripcion {
+    font-size: 0.95rem;
+  }
+  .terminal-text {
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary, .btn-secondary {
+    text-align: center;
+    width: 100%;
+  }
+
+  .foto-container {
+    width: 160px;
+    height: 160px;
+  }
+  .foto-perfil, .foto-placeholder {
+    width: 160px;
+    height: 160px;
+  }
+
+  .terminal-window {
+    margin: 0 -4px;
+  }
+  .terminal-body {
+    font-size: 0.75rem;
+    padding: 16px;
+  }
+  .terminal-input-row {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid {
+    justify-content: center;
+  }
+  .skill-item {
+    width: 78px;
+    padding: 14px;
+  }
+  .skill-item img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .stat-item {
+    padding: 20px 14px;
+  }
+  .stat-numero {
+    font-size: 1.8rem;
+  }
+
+  .titulo-principal {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  .cert-ver-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-card {
+    flex-wrap: wrap;
+  }
+  .cert-link {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .redes-sociales {
+    flex-direction: column;
+  }
+  .red-social {
+    justify-content: center;
+  }
+
+  footer {
+    padding: 30px 16px;
+  }
+}
+
+/* HAMBURGUESA */
+#hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 200;
+}
+#hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.3s;
+}
+#hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#hamburger.active span:nth-child(2) { opacity: 0; }
+#hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 968px) {
+  #hamburger { display: flex; }
+  #nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 70%; height: 100vh;
+    background: var(--bg2);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    transition: right 0.4s ease;
+    z-index: 150;
+    border-left: 1px solid rgba(192,38,211,0.2);
+  }
+  #nav-links.active { right: 0; }
+  #nav-links a { font-size: 1.1rem; }
+  .nav-status { display: none; }
+}

@@ -679,60 +679,98 @@ footer { padding: 40px 60px; background: var(--bg); border-top: 1px solid rgba(1
 
 /* TABLET */
 @media (max-width: 968px) {
-  #navbar {
-    padding: 16px 24px;
-  }
+  #hamburger { display: flex; }
+
   #navbar ul#nav-links {
     display: flex;
   }
-  .nav-status {
-    font-size: 0.7rem;
-  }
 
-  #inicio {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 100px 24px 60px;
-    gap: 40px;
-  }
-  .hero-content {
-    max-width: 100%;
-  }
-  .hero-btns {
+  #nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(192,38,211,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(239,68,68,0.06) 0%, transparent 50%),
+      #07050f;
+    flex-direction: column;
     justify-content: center;
-  }
-  .foto-container {
-    width: 200px;
-    height: 200px;
-  }
-  .foto-perfil, .foto-placeholder {
-    width: 200px;
-    height: 200px;
-  }
-
-  #terminal-section { padding: 40px 24px; }
-
-  #skills, #proyectos, #contacto, #sobre-mi, #certificaciones {
-    padding: 60px 24px;
+    align-items: center;
+    gap: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .sobre-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  #nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
   }
 
-  .contacto-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  #nav-links li {
+    list-style: none;
+    width: 80%;
+    max-width: 280px;
+    text-align: center;
+    border-bottom: 1px solid rgba(192,38,211,0.12);
   }
 
-  .certs-grid {
-    grid-template-columns: repeat(2, 1fr);
+  #nav-links li:last-child {
+    border-bottom: none;
   }
 
-  .titulo-principal {
-    flex-wrap: wrap;
+  #nav-links a {
+    display: block;
+    padding: 22px 0;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    font-family: var(--font-code);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    position: relative;
   }
+
+  #nav-links a::before {
+    content: "//";
+    color: var(--accent);
+    opacity: 0;
+    margin-right: 8px;
+    transition: opacity 0.3s;
+  }
+
+  #nav-links a:active::before,
+  #nav-links a:hover::before {
+    opacity: 1;
+  }
+
+  #nav-links a:active,
+  #nav-links a:hover {
+    color: var(--text);
+    letter-spacing: 4px;
+  }
+
+  /* Número decorativo arriba del menú */
+  #nav-links::before {
+    content: "MENU";
+    position: absolute;
+    top: 60px;
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 6px;
+    opacity: 0.6;
+  }
+
+  .nav-status { display: none; }
 }
 
 /* MÓVIL */

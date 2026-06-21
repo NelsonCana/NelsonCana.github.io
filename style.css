@@ -682,8 +682,8 @@ footer { padding: 40px 60px; background: var(--bg); border-top: 1px solid rgba(1
   #navbar {
     padding: 16px 24px;
   }
-  #navbar ul {
-    display: none;
+  #navbar ul#nav-links {
+    display: flex;
   }
   .nav-status {
     font-size: 0.7rem;
